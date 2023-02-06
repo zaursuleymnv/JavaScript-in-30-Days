@@ -1,0 +1,41 @@
+/* ======================================================================== */
+/*                      NOT RELATED TO THE TTUTORIAL                        */
+/* ======================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    list-style: none;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    list-style: none;
+  }
+  
+  :root {
+    --step--2: clamp(0.69rem, calc(0.58rem + 0.60vw), 1.00rem);
+    --step--1: clamp(0.83rem, calc(0.67rem + 0.81vw), 1.25rem);
+    --step-0: clamp(1.00rem, calc(0.78rem + 1.10vw), 1.56rem);
+    --step-1: clamp(1.20rem, calc(0.91rem + 1.47vw), 1.95rem);
+    --step-2: clamp(1.44rem, calc(1.05rem + 1.95vw), 2.44rem);
+    --step-3: clamp(1.73rem, calc(1.21rem + 2.58vw), 3.05rem);
+    --step-4: clamp(2.07rem, calc(1.39rem + 3.40vw), 3.82rem);
+    --step-5: clamp(2.49rem, calc(1.60rem + 4.45vw), 4.77rem);
+  }
+
+  html, body {
+    height: 100%;
+  }
+  
+  /* ======================================================================== */
+  /*                      RELATED TO THE TTUTORIAL                        */
+  /* ======================================================================== */
