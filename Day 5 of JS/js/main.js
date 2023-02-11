@@ -234,15 +234,15 @@ let tostring2 = itCompanies.join(', ')
 console.log(tostring2 + ' are big IT companies');
 
 // Check if a certain company exists in the itCompanies array. If it exist return the company else return a company is not found
-// let companyIserInput = prompt('Enter a company name:')
-// let toIndex = itCompanies.indexOf(companyIserInput.toLowerCase())
-// let companyName = companyIserInput.charAt(0).toUpperCase() + companyIserInput.slice(1);
-// if(toIndex === -1) {
-//   console.log(`Sorry! ${companyName} is not found`);
-// }
-// else {
-//   console.log(`${companyName} is found`);
-// }
+let companyIserInput = prompt('Enter a company name:')
+let toIndex = itCompanies.indexOf(companyIserInput.toLowerCase())
+let companyName = companyIserInput.charAt(0).toUpperCase() + companyIserInput.slice(1);
+if(toIndex === -1) {
+  console.log(`Sorry! ${companyName} is not found`);
+}
+else {
+  console.log(`${companyName} is found`);
+}
 
 // Filter out companies which have more than one 'o' without the filter method
 const filteredCompanies = itCompanies.reduce((accumulator, company) => {
