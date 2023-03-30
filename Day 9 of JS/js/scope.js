@@ -73,21 +73,21 @@ function sayMyName(name) {
   console.log(`Hello ${name}`);
 }
 
-// const interval = setInterval(sayMyName, 1000);
+const interval = setInterval(sayMyName, 1000);
 
-// setTimeout(sayMyName, 6000)
+setTimeout(sayMyName, 6000)
 
-// const timeout = setTimeout(() => {
-//   clearInterval(interval)
+const timeout = setTimeout(() => {
+  clearInterval(interval)
 
-//   console.log('Interval procedure was ended');
-// }, 6000)
+  console.log('Interval procedure was ended');
+}, 6000)
 
-// setTimeout(() => {
-//   clearTimeout(timeout)
+setTimeout(() => {
+  clearTimeout(timeout)
 
-//   console.log('Timeout procedure was ended, Interval will continue');
-// }, 4000)
+  console.log('Timeout procedure was ended, Interval will continue');
+}, 4000)
 
 
 // --------------------------------- forEach ---------------------------------
@@ -610,4 +610,96 @@ function countStartingLetters(countries) {
 }
 console.log(countStartingLetters(countries5));
 
+/* Declare a getFirstTenCountries function and return an array of ten countries. 
+Use different functional programming to work on the countries.js array
+*/
+const getFirstTenCountries = () => {
+
+  // to get the first ten countries
+  const firsTenCountries = countries5.slice(0, 10)
+
+  const objectCountries = firsTenCountries.map((name) => ({name}))
+
+  const filterCountries = objectCountries.filter((country) => !country.name.endsWith('ia'))
+
+  const countryNames = filterCountries.reduce((acc, country) => {
+    acc.push(country.name)
+
+    return acc
+  }, [])
+
+  return countryNames
+}
+console.log(getFirstTenCountries());
+
+// Declare a getLastTenCountries function which which returns the last ten countries in the countries array.
+const getLastTenCountries = () => {
+  const lastTenCountries = countries5.slice(-10)
+  
+  return lastTenCountries
+}
+console.log(getLastTenCountries());
+
+// ----------------------------------------------
+
+const getLastTenCountriesLength = () => {
+  const lastTenCountries = countries5.slice(-10)
+
+
+  const lastTenCountriesLengths = lastTenCountries.map((country) => country.length);
+
+  return lastTenCountriesLengths
+}
+console.log(getLastTenCountriesLength());
+
+/* Find out which letter is used many times as initial for a country name 
+from the countries array (eg. Finland, Fiji, France etc)
+*/
+const frequency = {}
+
+countries5.forEach((country) => {
+  const firstLetter = country.charAt(0)
+  frequency[firstLetter] = (frequency[firstLetter] || 0) + 1
+})
+
+const sortedFrequency = Object.keys(frequency).sort((a, b) => frequency[b] - frequency[a])
+
+const mostFrequentLetter = sortedFrequency[0];
+
+console.log(`The letter "${mostFrequentLetter}" is used most frequently as an letter in country names.`);
+
+
+
+
+
+// // -----------------------------------------------------------------------------------------------------------------
+
+// //                                            Exercises: Level 3
+
+// // Use the countries information, in the data folder. Sort countries by name, by capital, by population
+
+// countries.sort((a, b) => a.name.localeCompare(b.name))
+// countries.sort((a, b) => a.capital.localeCompare(b.capital))
+// countries.sort((a, b) => b.population - a.population)
+
+// function mostSpokenLanguages(countries, limit) {
+
+//   const frequency = {}
+
+//   countries.forEach((country) => {
+//     const languages = country.languages
+
+//     languages.forEach((language) => {
+//       frequency[language] = (frequency[language] || 0) + 1
+//     })
+//   })
+
+//   const sortedFrequency = Object.keys(frequency)
+//     .map((language) => ({language, count: frequency[language]}))
+//     .sort((a, b) => b.count -a.count)
+
+//     return sortedFrequency.slice(0, limit)
+// }
+
+// console.log(mostSpokenLanguages(countries5, 10));
 
